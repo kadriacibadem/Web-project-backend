@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.sql.Time;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -32,22 +32,17 @@ public class User
     private String password;
 
 
-    private int score;
-
-
-    private Time time;
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id && score == user.score && Objects.equals(name, user.name) && Objects.equals(surname, user.surname) && Objects.equals(email, user.email) && Objects.equals(password, user.password) && Objects.equals(time, user.time);
+        return id == user.id  && Objects.equals(name, user.name) && Objects.equals(surname, user.surname) && Objects.equals(email, user.email) && Objects.equals(password, user.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname, email, password, score, time);
+        return Objects.hash(id, name, surname, email, password);
     }
 
 

@@ -1,21 +1,27 @@
 package com.webproject.controller;
 
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.webproject.User;
-import com.webproject.service.UserService;
+import com.webproject.service.ExamService;
+import com.webproject.service.UserService;;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
+
 
 @Controller
 public class UsersController {
+
 
     private final UserService userService;
 
     public UsersController(UserService userService){
         this.userService = userService;
     }
+
 
 
     @GetMapping("/register")
@@ -26,8 +32,9 @@ public class UsersController {
 
     @GetMapping("/page")
     public String getMainPage(User user, Model model){
+        model.addAttribute("id",user.getId());
         model.addAttribute("name",user.getName());
-        return "../static/main_page";
+        return "main-page";
     }
 
     @GetMapping("/login")
@@ -53,4 +60,31 @@ public class UsersController {
             return null;
         }
     }
+
+    @GetMapping("/exam/mat/{id}")
+    public String matExam(@PathVariable("id") User user, Model model){
+        model.addAttribute("name",user.getName());
+        return "../static/mat-exam";
+    }
+
+    @GetMapping("/exam/fen/{id}")
+    public String fenExam(@PathVariable("id") User user, Model model){
+        model.addAttribute("name",user.getName());
+        return "../static/fen-exam";
+    }
+
+    @GetMapping("/exam/ingilizce/{id}")
+    public String englishExam(@PathVariable("id") User user, Model model){
+        model.addAttribute("name",user.getName());
+        model.addAttribute("id",user.getId());
+        return "../static/english-exam";
+    }
+
+    /*@RequestMapping(value = "/getscore", method = RequestMethod.GET)
+    public @ResponseBody String getSector(@RequestParam("scoreDB")String scoreDB) throws JsonGenerationException, JsonMappingException, IOException
+    {
+            //buraya bak
+    }*/
+
+
 }
