@@ -25,6 +25,8 @@
     var selections = []; // Kullanıcın seçtiği seçenekler
     var quiz = $('#quiz'); //Quiz div objesi
 
+    var url = (window.location).href;
+    var id = url.substring(url.lastIndexOf('/') + 1);
 
 
     // sayfa ilk yüklendiğinde ekranda gözükecekler
@@ -148,7 +150,7 @@
                         });
 
 
-                        window.location="http://localhost:8080/exam/ingilizce/0/?score="+score+"&time="+timetoDB;
+                        window.location="http://localhost:8080/exam/ingilizce/"+id+"/?score="+score+"&time="+timetoDB;
 
 
                     });
@@ -244,7 +246,7 @@
 
                 document.getElementById("go-home").onclick =  function()
                 {
-                    window.location="http://localhost:8080/exam/ingilizce/0/?score="+score+"&time="+timetoDB;
+                    window.location="http://localhost:8080/exam/ingilizce/"+id+"/?score="+score+"&time="+timetoDB;
                 }
 
             });
@@ -298,7 +300,7 @@
                         });
 
 
-                        window.location="http://localhost:8080/exam/ingilizce/0/?score="+score+"&time="+0;
+                        window.location="http://localhost:8080/exam/ingilizce/"+id+"/?score="+score+"&time="+timetoDB;
 
 
                     });

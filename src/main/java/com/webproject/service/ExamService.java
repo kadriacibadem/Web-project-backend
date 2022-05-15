@@ -3,7 +3,6 @@ package com.webproject.service;
 import com.webproject.Exam;
 import com.webproject.User;
 import com.webproject.repository.ExamRepository;
-import com.webproject.repository.UsersRepository;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,17 +16,13 @@ public class ExamService {
 
 
     public Exam setScoreandTime(String score,String time, User user){
-       /* Exam exam = new Exam();
+
+        Exam exam = new Exam();
         exam.setScore(score);
         exam.setTime(time);
         exam.setUserid(user.getId());
-        return examRepository.save(exam);*/
+        return examRepository.save(exam);
 
-        if(checkUser(user.getId())){
-
-        }else{
-
-        }
     }
 
     public Boolean checkUser(int id){

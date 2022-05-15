@@ -1,15 +1,12 @@
 package com.webproject.controller;
 
-import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.databind.JsonMappingException;
+
 import com.webproject.User;
-import com.webproject.service.ExamService;
 import com.webproject.service.UserService;;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 
 
 @Controller
@@ -30,8 +27,16 @@ public class UsersController {
         return "register_page";
     }
 
+    @GetMapping("/page/{id}")
+    public String getMainPage2(@PathVariable("id") User user, Model model){
+        model.addAttribute("id",user.getId());
+        model.addAttribute("name",user.getName());
+        User authenticated =  userService.authenticate(user.getEmail(), user.getPassword());
+        return getMainPage(authenticated,model);
+    }
+
     @GetMapping("/page")
-    public String getMainPage(User user, Model model){
+    public String getMainPage(@ModelAttribute User user, Model model){
         model.addAttribute("id",user.getId());
         model.addAttribute("name",user.getName());
         return "main-page";
@@ -80,11 +85,29 @@ public class UsersController {
         return "../static/english-exam";
     }
 
-    /*@RequestMapping(value = "/getscore", method = RequestMethod.GET)
-    public @ResponseBody String getSector(@RequestParam("scoreDB")String scoreDB) throws JsonGenerationException, JsonMappingException, IOException
-    {
-            //buraya bak
-    }*/
+
+    @GetMapping("/fen/gezegenimizitaniyalim/{id}")
+    public String getFenSubject1(@PathVariable("id") User user,Model model){
+        model.addAttribute("name",user.getName());
+        model.addAttribute("id",user.getId());
+        return "../static/fen-konu1";
+    }
+
+
+    @GetMapping("/fen/maddeyitaniyalim/{id}")
+    public String getFenSubject2(@PathVariable("id") User user,Model model){
+        model.addAttribute("name",user.getName());
+        model.addAttribute("id",user.getId());
+        return "../static/fen-konu2";
+    }
+
+    @GetMapping("/fen/canlilar/{id}")
+    public String getFenSubject3(@PathVariable("id") User user,Model model){
+        model.addAttribute("name",user.getName());
+        model.addAttribute("id",user.getId());
+        return "../static/fen-konu3";
+    }
+
 
 
 }
