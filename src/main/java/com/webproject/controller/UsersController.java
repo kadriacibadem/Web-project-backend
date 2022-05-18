@@ -108,6 +108,40 @@ public class UsersController {
         return "../static/fen-konu3";
     }
 
+    @GetMapping("/mat/toplamitahminetme/{id}")
+    public String getMatSubject1(@PathVariable("id") User user,Model model){
+        model.addAttribute("name",user.getName());
+        model.addAttribute("id",user.getId());
+        return "../static/mat-konu1";
+    }
+
+    @GetMapping("/mat/carpmaislemi/{id}")
+    public String getMatSubject2(@PathVariable("id") User user,Model model){
+        model.addAttribute("name",user.getName());
+        model.addAttribute("id",user.getId());
+        return "../static/mat-konu2";
+    }
+
+    @GetMapping("/mat/geometrikcisimler/{id}")
+    public String getMatSubject3(@PathVariable("id") User user,Model model){
+        model.addAttribute("name",user.getName());
+        model.addAttribute("id",user.getId());
+        return "../static/mat-konu3";
+    }
+
+    @GetMapping("/ingilizce/peopleilove/{id}")
+    public String getEnglishSubject1(@PathVariable("id") User user,Model model){
+        model.addAttribute("name",user.getName());
+        model.addAttribute("id",user.getId());
+        return "../static/ingilizce-konu1";
+    }
+
+    @GetMapping("/ingilizce/toysandgames/{id}")
+    public String getEnglishSubject2(@PathVariable("id") User user,Model model){
+        model.addAttribute("name",user.getName());
+        model.addAttribute("id",user.getId());
+        return "../static/ingilizce-konu2";
+    }
 
 
 }

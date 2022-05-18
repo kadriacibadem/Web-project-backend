@@ -23,7 +23,7 @@
 <body class="body-2">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">ZKM I </a>
+        <a class="navbar-brand" th:href="@{/page/{id}(id=${id})}">ZKM I </a>
         <button
                 class="navbar-toggler"
                 type="button"
@@ -109,7 +109,7 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <a href="#"
+                        <a th:href="@{/mat/toplamitahminetme/{id}(id=${id})}"
                         ><img th:src="@{../Images/sayi.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <a href="#"
+                        <a th:href="@{/mat/carpmaislemi/{id}(id=${id})}"
                         ><img  th:src="@{../Images/kesirler.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <a href="#"
+                        <a th:href="@{/mat/geometrikcisimler/{id}(id=${id})}"
                         ><img th:src="@{../Images/uzunluk.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
@@ -293,7 +293,7 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <a href="#"
+                        <a th:href="@{/ingilizce/peopleilove/{id}(id=${id})}"
                         ><img th:src="@{../Images/greeting.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
@@ -302,7 +302,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <a href="#"
+                        <a th:href="@{/ingilizce/toysandgames/{id}(id=${id})}"
                         ><img th:src="@{../Images/family.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
