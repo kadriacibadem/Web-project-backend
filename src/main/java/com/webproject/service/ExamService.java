@@ -43,6 +43,14 @@ public class ExamService {
         return examRepository.save(exam);
     }
 
+    public Exam setMatScoreandTime(String score,String time, User user){
+        Exam exam = new Exam();
+        exam.setMatscore(score);
+        exam.setMattime(time);
+        exam.setUserid(user.getId());
+        return examRepository.save(exam);
+    }
+
     public Exam authenticate(int id){
         return examRepository.findFirstByUserid(id).orElse(null);
     }

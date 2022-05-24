@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr" xmlns:th="http://www.thymeleaf.org">
 <head>
+
+    <link rel="shortcut icon" href="#">  <!-- fixed favicon error -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +20,7 @@
             referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../static/Styles/index.css" th:href="@{/Styles/index.css}">
-    <title>Dersler</title>
+    <title>Anasayfa</title>
 </head>
 <body class="body-2">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -110,7 +112,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <a th:href="@{/mat/toplamitahminetme/{id}(id=${id})}"
-                        ><img th:src="@{../Images/sayi.jpg}" alt="..." class="dersImg"
+                        ><img src="../static/Images/sayi.jpg" th:src="@{/Images/sayi.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
                             <h5>Doğal Sayılar</h5>
@@ -119,7 +121,7 @@
                     </div>
                     <div class="carousel-item">
                         <a th:href="@{/mat/carpmaislemi/{id}(id=${id})}"
-                        ><img  th:src="@{../Images/kesirler.jpg}" alt="..." class="dersImg"
+                        ><img src="../static/Images/kesirler.jpg" th:src="@{/Images/kesirler.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
                             <h5>Kesirler</h5>
@@ -128,7 +130,7 @@
                     </div>
                     <div class="carousel-item">
                         <a th:href="@{/mat/geometrikcisimler/{id}(id=${id})}"
-                        ><img th:src="@{../Images/uzunluk.jpg}" alt="..." class="dersImg"
+                        ><img src="../static/Images/uzunluk.jpg" th:src="@{/Images/uzunluk.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
                             <h5>Uzunluk Ölçümleri</h5>
@@ -202,7 +204,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <a th:href="@{/fen/gezegenimizitaniyalim/{id}(id=${id})}"
-                        ><img th:src="@{../Images/gezegen.jpg}" alt="..." class="dersImg"
+                        ><img src="../static/Images/gezegen.jpg" th:src="@{/Images/gezegen.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
                             <h5>Gezegenimizi Tanıyalım</h5>
@@ -211,7 +213,7 @@
                     </div>
                     <div class="carousel-item">
                         <a th:href="@{/fen/maddeyitaniyalim/{id}(id=${id})}"
-                        ><img th:src="@{../Images/madde.jpg}" alt="..." class="dersImg"
+                        ><img src="../static/Images/madde.jpg" th:src="@{/Images/madde.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
                             <h5>Maddeyi Tanıyalım</h5>
@@ -220,7 +222,7 @@
                     </div>
                     <div class="carousel-item">
                         <a th:href="@{/fen/canlilar/{id}(id=${id})}"
-                        ><img th:src="@{../Images/canlilar.jpg}" alt="..." class="dersImg"
+                        ><img src="../static/Images/canlilar.jpg" th:src="@{/Images/canlilar.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
                             <h5>Canlılar Dünyasına Giriş</h5>
@@ -294,7 +296,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <a th:href="@{/ingilizce/peopleilove/{id}(id=${id})}"
-                        ><img th:src="@{../Images/greeting.jpg}" alt="..." class="dersImg"
+                        ><img src="../static/Images/greeting.jpg" th:src="@{/Images/greeting.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
                             <h5>Greeting</h5>
@@ -303,7 +305,7 @@
                     </div>
                     <div class="carousel-item">
                         <a th:href="@{/ingilizce/toysandgames/{id}(id=${id})}"
-                        ><img th:src="@{../Images/family.jpg}" alt="..." class="dersImg"
+                        ><img src="../static/Images/family.jpg" th:src="@{/Images/family.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
                             <h5>My Family</h5>
@@ -311,8 +313,8 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <a href="#"
-                        ><img th:src="@{../Images/people.jpg}" alt="..." class="dersImg"
+                        <a th:href="@{/ingilizce/myhouse/{id}(id=${id})}"
+                        ><img src="../static/Images/people.jpg" th:src="@{/Images/people.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
                             <h5>People</h5>

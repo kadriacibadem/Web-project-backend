@@ -49,13 +49,13 @@ public class ExamController {
     }
 
     @RequestMapping(value = "/exam/fen/{id}/", method = RequestMethod.GET)
-    public String getFenScore(@RequestParam(name = "score", required = true)String score,@PathVariable("id") User user,Model model,
+    public String getFenScore(@RequestParam(name = "fenscore", required = true)String fenscore,@PathVariable("id") User user,Model model,
                            @RequestParam(name = "time", required = true)String time)
     {
 
         //Sınava girip girmediğini kontrol eder
-        if(!examService.checkFenExam(user.getId(),score)){
-            examService.setFenScoreandTime(score,time,user);
+        if(!examService.checkFenExam(user.getId(),fenscore)){
+            examService.setFenScoreandTime(fenscore,time,user);
         }
 
 
@@ -68,13 +68,13 @@ public class ExamController {
     }
 
     @RequestMapping(value = "/exam/mat/{id}/", method = RequestMethod.GET)
-    public String getMatScore(@RequestParam(name = "score", required = true)String score,@PathVariable("id") User user,Model model,
+    public String getMatScore(@RequestParam(name = "matscore", required = true)String matscore,@PathVariable("id") User user,Model model,
                               @RequestParam(name = "time", required = true)String time)
     {
 
         //Sınava girip girmediğini kontrol eder
-        if(!examService.checkMatExam(user.getId(),score)){
-            examService.setScoreandTime(score,time,user);
+        if(!examService.checkMatExam(user.getId(),matscore)){
+            examService.setMatScoreandTime(matscore,time,user);
         }
 
 

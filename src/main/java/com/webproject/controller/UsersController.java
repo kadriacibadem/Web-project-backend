@@ -62,7 +62,7 @@ public class UsersController {
         if(authenticated != null){
             return getMainPage(authenticated,model);
         }else{
-            return null;
+            return "error_page";
         }
     }
 
@@ -141,6 +141,13 @@ public class UsersController {
         model.addAttribute("name",user.getName());
         model.addAttribute("id",user.getId());
         return "../static/ingilizce-konu2";
+    }
+
+    @GetMapping("/ingilizce/myhouse/{id}")
+    public String getEnglishSubject3(@PathVariable("id") User user,Model model){
+        model.addAttribute("name",user.getName());
+        model.addAttribute("id",user.getId());
+        return "../static/ingilizce-konu3";
     }
 
 

@@ -25,6 +25,7 @@
     var selections = []; // Kullanıcın seçtiği seçenekler
     var quiz = $('#quiz'); //Quiz div objesi
 
+    console.log("test")
     var url = (window.location).href;
     var id = url.substring(url.lastIndexOf('/') + 1);
 
@@ -202,9 +203,9 @@
     // Başlat butonuna tıklandığında süre başlar ve soru ekranda gözükür.
     $(document).ready(function() {
         $("#start-exam").click(function(){
-            var fiveMinutes = 60 * 50;
+            var fiftyMinutes = 60 * 50;
             display = document.querySelector('#timer');
-            startTimer(fiveMinutes, display);
+            startTimer(fiftyMinutes, display);
             $('#start-exam').hide();
             $('#finish-exam').show();
             displayNext();

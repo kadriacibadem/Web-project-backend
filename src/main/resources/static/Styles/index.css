@@ -67,6 +67,18 @@ body {
     background-color: white;
     color: black;
 }
+@media (max-width: 500px) {
+    .yonlendirme a {
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (min-width: 500px) {
+    .yonlendirme a {
+        display: flex;
+        justify-content: center;
+    }
+}
 .dropdown-menu {
     background-color: yellow;
 }
@@ -93,4 +105,11 @@ body {
 }
 .body-2 {
     background-color: white;
+}
+.col-4 h1 {
+    margin-top: 150px;
+}
+.konu-galeri {
+    border: 2px solid black;
+    border-radius: 20px;
 }

@@ -25,6 +25,9 @@
     var selections = []; // Kullanıcın seçtiği seçenekler
     var quiz = $('#quiz'); //Quiz div objesi
 
+    var scoreDB;  // Skor değerini DB'ye atmak için
+    var url = (window.location).href;
+    var id = url.substring(url.lastIndexOf('/') + 1);
 
 
     // sayfa ilk yüklendiğinde ekranda gözükecekler
@@ -133,10 +136,10 @@
                 $(document).ready(function() {
                     $("#go-home").click(function(){
 
-                        score = scoreDB;
+                        fenscore = scoreDB;
 
                         $.ajax({
-                            url: "?score="+score+"&time="+timetoDB,
+                            url: "?fenscore="+fenscore+"&time="+timetoDB,
                             type: "GET",
                             success: function(response)
                             {
@@ -148,7 +151,7 @@
                         });
 
 
-                        window.location="http://localhost:8080/exam/fen/0/?score="+score+"&time="+timetoDB;
+                        window.location="http://localhost:8080/exam/fen/"+id+"/?fenscore="+fenscore+"&time="+timetoDB;
 
 
                     });
@@ -157,7 +160,7 @@
         });
     }
 
-    var scoreDB;  // Skor değerini DB'ye atmak için
+
 
     // Skor hesaplar ve question elementinde gösterir
     function computeScore() {
@@ -200,9 +203,9 @@
     // Başlat butonuna tıklandığında süre başlar ve soru ekranda gözükür.
     $(document).ready(function() {
         $("#start-exam").click(function(){
-            var fiveMinutes = 60 * 50;
+            var fiftyMinutes = 60 * 50;
             display = document.querySelector('#timer');
-            startTimer(fiveMinutes, display);
+            startTimer(fiftyMinutes, display);
             $('#start-exam').hide();
             $('#finish-exam').show();
             displayNext();
@@ -228,10 +231,10 @@
 
 
 
-                score = scoreDB;
+                fenscore = scoreDB;
 
                 $.ajax({
-                    url: "?score="+score+"&time="+timetoDB,
+                    url: "?fenscore="+fenscore+"&time="+timetoDB,
                     type: "GET",
                     success: function(response)
                     {
@@ -244,7 +247,7 @@
 
                 document.getElementById("go-home").onclick =  function()
                 {
-                    window.location="http://localhost:8080/exam/fen/0/?score="+score+"&time="+timetoDB;
+                    window.location="http://localhost:8080/exam/fen/"+id+"/?fenscore="+fenscore+"&time="+timetoDB;
                 }
 
             });
@@ -257,7 +260,7 @@
     checkFinishButton();
     // ---------------------- TİMER ----------------------
 
-    function startTimer(duration, display) {
+    function startTimer(duration,display) {
         var timer = duration, minutes, seconds;
         time = setInterval(function () {
             minutes = parseInt(timer / 60, 10);  // String to int
@@ -283,10 +286,10 @@
                 $(document).ready(function() {
                     $("#go-home").click(function(){
 
-                        score = scoreDB;
+                        fenscore = scoreDB;
 
                         $.ajax({
-                            url: "?score="+score+"&time="+0,
+                            url: "?fenscore="+fenscore+"&time="+0,
                             type: "GET",
                             success: function(response)
                             {
@@ -298,7 +301,7 @@
                         });
 
 
-                        window.location="http://localhost:8080/exam/fen/0/?score="+score+"&time="+0;
+                        window.location="http://localhost:8080/exam/fen/"+id+"/?fenscore="+fenscore+"&time="+0;
 
 
                     });
