@@ -25,7 +25,7 @@
     var selections = []; // Kullanıcın seçtiği seçenekler
     var quiz = $('#quiz'); //Quiz div objesi
 
-    console.log("test")
+    var scoreDB;  // Skor değerini DB'ye atmak için
     var url = (window.location).href;
     var id = url.substring(url.lastIndexOf('/') + 1);
 
@@ -35,7 +35,7 @@
         $('#next').hide();
         $('#finish-exam').hide();
         $('#go-home').hide();
-
+        $('#timer').hide();
     };
     // Sonraki soruları göstermek için
     $('#next').on('click', function (e) {
@@ -45,7 +45,7 @@
         displayNext();
     });
 
-    // Click handler for the 'prev' button
+    // Önceki sorular için
     $('#prev').on('click', function (e) {
         e.preventDefault();
         choose();
@@ -54,16 +54,9 @@
     });
 
 
-    // Animates buttons on hover
-    $('.button').on('mouseenter', function () {
-        $(this).addClass('active');
-    });
-    $('.button').on('mouseleave', function () {
-        $(this).removeClass('active');
-    });
 
-    // Creates and returns the div that contains the questions and
-    // the answer selections
+
+    // quiz div oluşturma
     function createQuestionElement(index) {
         var qElement = $('<div>', {
             id: 'question'
@@ -160,7 +153,7 @@
         });
     }
 
-    var scoreDB;  // Skor değerini DB'ye atmak için
+
 
     // Skor hesaplar ve question elementinde gösterir
     function computeScore() {
@@ -203,6 +196,7 @@
     // Başlat butonuna tıklandığında süre başlar ve soru ekranda gözükür.
     $(document).ready(function() {
         $("#start-exam").click(function(){
+            $('#timer').show();
             var fiftyMinutes = 60 * 50;
             display = document.querySelector('#timer');
             startTimer(fiftyMinutes, display);

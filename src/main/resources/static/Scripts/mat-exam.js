@@ -1,24 +1,45 @@
 (function() {
     var questions = [{
-        question: "Soru1",
-        choices: [0, 1, 2, 3, 4],
-        correctAnswer: 0
-    }, {
-        question: "Soru2",
-        choices: [0, 1, 2, 3, 4],
-        correctAnswer: 1
-    }, {
-        question: "Soru3",
-        choices: [0, 1, 2, 3, 4],
+        question: "Bir kırtasiyede her birinde 12 kalem olan 81 kutu kurşun kalem vardır.Tükenmez kalem sayısı ise kurşun kalemlerden 39 daha azdır.Buna göre kırtasiyedeki tükenmez kalem sayısı kaçtır?",
+        choices: [927, 914, 933, 940, 908],
         correctAnswer: 2
     }, {
-        question: "Soru4",
-        choices: [0, 1, 2, 3, 4],
+        question: "175 yolcusu olan bir gemi dört limana uğramış ve her limanda 118 yolcu almıştır.\n" +
+            "Buna göre gemide kaç yolcu olmuştur?",
+        choices: [600, 647, 595, 741, 804],
+        correctAnswer: 1
+    }, {
+        question: "Süleyman üç günde toplam 995 m koşmuştur.İlk iki günde her gün 385 m koştuğuna göre Süleyman 3. günde kaç metre koşmuştur?",
+        choices: [350, 300, 250, 225, 220],
         correctAnswer: 3
     }, {
-        question: "Soru5",
-        choices: [0, 1, 2, 3, 4],
+        question: "Büyük bir pastane yaptığı keklerin her biri için 12 yumurta kullanmaktadır.Bugün bu keklerden 29 kek yapan pastanede 154 yumurta kalmıştır.Buna göre kek yapmaya başlamdan önce pastanede kaç yumurta vardı?",
+        choices: [502, 500, 501, 499, 502],
+        correctAnswer: 0
+    }, {
+        question: "Bir lokum dükkanında 955 adet ambalajlanmamış lokum vardı.Bu lokumlardan bir kısmı bir tanesinde 35 tane lokum olan 24 kutuya konulmuştur.Ambalajlanmamış kaç lokum kalmıştır?",
+        choices: [110, 115, 120, 105, 125],
+        correctAnswer: 1
+    }, {
+        question: "Bir arabanın bagajında 8 koli vardır.Bunlardan 7 tanesinin her birinin kütlesi 113 kg , 8. kolinin kütlesi ise 185 kg dır.Buna göre bagajdaki kolilerin kütlesi kaç kilogramdır?",
+        choices: [965, 970, 976, 977, 980],
+        correctAnswer: 2
+    }, {
+        question: "342 + 133 =? işleminin tahmini sonucu kaçtır?",
+        choices: [500, 480, 450, 460, 470],
         correctAnswer: 4
+    }, {
+        question: "Kare ile dikdörtgensel bölge hangi geometrik şeklin yüzeylerini oluşturur ?",
+        choices: ["Küp", "Kare Prizma", "Daire", "Üçgen", "Dikdörtgen"],
+        correctAnswer: 1
+    }, {
+        question: "234 + 358 =? işleminin tahmini sonucu kaçtır?",
+        choices: [490, 590, 600, 450, 400],
+        correctAnswer: 1
+    }, {
+        question: "Dört tarafı birbirine eşit olan geometrik şekil hangisidir ?",
+        choices: ["Silindir", "Kare", "Üçgen", "Daire", "Dikdörtgen"],
+        correctAnswer: 1
     }];
 
     var questionCounter = 0; //Soru sayısını takip etmek için
@@ -30,12 +51,13 @@
     var id = url.substring(url.lastIndexOf('/') + 1);
 
 
+
     // sayfa ilk yüklendiğinde ekranda gözükecekler
     window.onload = function () {
         $('#next').hide();
         $('#finish-exam').hide();
         $('#go-home').hide();
-
+        $('#timer').hide();
     };
     // Sonraki soruları göstermek için
     $('#next').on('click', function (e) {
@@ -45,7 +67,7 @@
         displayNext();
     });
 
-    // Click handler for the 'prev' button
+    // Önceki sorular için
     $('#prev').on('click', function (e) {
         e.preventDefault();
         choose();
@@ -54,16 +76,8 @@
     });
 
 
-    // Animates buttons on hover
-    $('.button').on('mouseenter', function () {
-        $(this).addClass('active');
-    });
-    $('.button').on('mouseleave', function () {
-        $(this).removeClass('active');
-    });
 
-    // Creates and returns the div that contains the questions and
-    // the answer selections
+    // quiz div oluşturma
     function createQuestionElement(index) {
         var qElement = $('<div>', {
             id: 'question'
@@ -203,6 +217,7 @@
     // Başlat butonuna tıklandığında süre başlar ve soru ekranda gözükür.
     $(document).ready(function() {
         $("#start-exam").click(function(){
+            $('#timer').show();
             var fiftyMinutes = 60 * 50;
             display = document.querySelector('#timer');
             startTimer(fiftyMinutes, display);

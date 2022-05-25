@@ -1,16 +1,20 @@
 body {
-    background-color: #cc9a06;
+    background-color: #fedeb3;
+}
+.name{
+    font-family: 'Tapestry', cursive;
+    font-size: 80px;
 }
 #zkm {
     position: sticky;
-    background-color: #b02a37;
+    background-color: #434343;
 }
 .zkm {
     height: 50vh;
     border-bottom: 5px solid black;
     border-radius: 0px 0px 50px 50px;
     overflow: hidden;
-    background-color: #ca6510;
+    background-color: #fff68f;
 }
 .kitap {
     border: 1px solid black;
@@ -52,19 +56,20 @@ body {
     margin: 100px;
 }
 .yonlendirme a {
-    font-weight: 1000;
-    font-size: large;
+    font-weight: 500;
+
     text-decoration: none;
-    border: 2px solid black;
-    background-color: black;
+    background-color: #9816F6;
     color: white;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 15px;
     padding: 10px;
     margin: auto;
+    width: 120px;
+    height: auto;
 }
 .yonlendirme a:hover {
     transition: 1s;
-    background-color: white;
+    background-color: darkorange;
     color: black;
 }
 @media (max-width: 500px) {
@@ -113,3 +118,13 @@ body {
     border: 2px solid black;
     border-radius: 20px;
 }
+
+.background{
+    background-image: url("https://img.freepik.com/free-photo/hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg?w=2000");
+    background-color: #cccccc;
+    width: 100%;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }

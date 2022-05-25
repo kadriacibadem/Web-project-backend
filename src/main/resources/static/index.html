@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="tr" xmlns:th="http://www.thymeleaf.org">
 <head>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +25,11 @@
             href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@700&display=swap"
             rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tapestry&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Styles/index.css" />
+    <link rel="shortcut icon" type="image/png" th:href="@{/Images/favicon.png}" href="./Images/favicon.png"/>
     <title>ZKM | Hoş Geldiniz!</title>
 </head>
 <body>
@@ -37,10 +42,10 @@
           </span>
         </div>
     </nav>
-    <div class="zkm text-center fw-bold p-4">
-        <h1>ZKM</h1>
-        <h2>Eğitim Platformuna Hoş Geldiniz!</h2>
-        <img src="./Images/logo.jpg" alt="" class="kitap rounded-pill" />
+    <div class="zkm text-center fw-bold background">
+        <h1 class="name">ZKM</h1>
+        <h2 class="name" style="font-size: 30px">Eğitim Platformuna Hoş Geldiniz!</h2>
+        <img src="./Images/kitap.jpg" alt="" class="kitap rounded-pill" style="margin-bottom: 0px"/>
     </div>
 </header>
 

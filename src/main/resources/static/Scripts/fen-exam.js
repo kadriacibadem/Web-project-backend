@@ -35,7 +35,7 @@
         $('#next').hide();
         $('#finish-exam').hide();
         $('#go-home').hide();
-
+        $('#timer').hide();
     };
     // Sonraki soruları göstermek için
     $('#next').on('click', function (e) {
@@ -45,7 +45,7 @@
         displayNext();
     });
 
-    // Click handler for the 'prev' button
+    // Önceki sorular için
     $('#prev').on('click', function (e) {
         e.preventDefault();
         choose();
@@ -54,16 +54,8 @@
     });
 
 
-    // Animates buttons on hover
-    $('.button').on('mouseenter', function () {
-        $(this).addClass('active');
-    });
-    $('.button').on('mouseleave', function () {
-        $(this).removeClass('active');
-    });
 
-    // Creates and returns the div that contains the questions and
-    // the answer selections
+    // quiz div oluşturma
     function createQuestionElement(index) {
         var qElement = $('<div>', {
             id: 'question'
@@ -203,6 +195,7 @@
     // Başlat butonuna tıklandığında süre başlar ve soru ekranda gözükür.
     $(document).ready(function() {
         $("#start-exam").click(function(){
+            $('#timer').show();
             var fiftyMinutes = 60 * 50;
             display = document.querySelector('#timer');
             startTimer(fiftyMinutes, display);
