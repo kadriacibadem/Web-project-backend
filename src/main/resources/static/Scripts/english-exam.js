@@ -1,24 +1,44 @@
 (function() {
     var questions = [{
-        question: "Soru1",
-        choices: [0, 1, 2, 3, 4],
+        question: "Can a dog talk?",
+        choices: ["A) No, it can't", "B) Yes, it can", "C) No, he can't", "D) No, she can't", "E) Yes, she can't"],
         correctAnswer: 0
     }, {
-        question: "Soru2",
-        choices: [0, 1, 2, 3, 4],
-        correctAnswer: 1
-    }, {
-        question: "Soru3",
-        choices: [0, 1, 2, 3, 4],
+        question: "Small kelimesinin zıt anlamlısı aşağıdakilerden hangisidir?",
+        choices: ["A) Hate", "B) Happy", "C) Big", "D) Sad", "E) Great"],
         correctAnswer: 2
     }, {
-        question: "Soru4",
-        choices: [0, 1, 2, 3, 4],
+        question: "Rich kelimesinin zıt anlamlısı aşağıdakilerden hangisidir?",
+        choices: ["A) Dark", "B) Poor", "C) Clean", "D) Light", "E) Trash"],
+        correctAnswer: 1
+    }, {
+        question: "Can a lion run?",
+        choices: ["A) Yes, he can", "B) Yes, she can", "C) Yes, it can", "D) No, he can't", "E) No, it can't"],
+        correctAnswer: 2
+    }, {
+        question: "Board Game kelimesinin Türkçe karşılığı hangisidir?",
+        choices: ["A) Masa oyunu", "B) Oyun kartları", "C) Kalemler", "D) Oyuncak", "E) Tahta Kalemi"],
+        correctAnswer: 0
+    }, {
+        question: "Aşağıdaki eşleştirmelerden hangisi yanlıştır?",
+        choices: ["A) Quick - Hızlı", "B) Easy - Zor", "C) Full - Dolu", "D) Clean - Temiz", "E) Slow - Yavaş"],
+        correctAnswer: 1
+    }, {
+        question: "Chair kelimesinin Türkçe karşılığı hangisidir ?  ",
+        choices: ["A) Kanepe", "B) Masa", "C) Yatak", "D) Sandalye", "E) Koltuk"],
         correctAnswer: 3
     }, {
-        question: "Soru5",
-        choices: [0, 1, 2, 3, 4],
+        question: "Table evimizin hangi kısmında bulunabilir?",
+        choices: ["A) Bedroom", "B) Kitchen", "C) Bathroom", "D) Balcony", "E) Hall"],
+        correctAnswer: 1
+    }, {
+        question: "My father is eating hamburger. He is in the .................... .",
+        choices: ["A) Bathroom", "B) Hall", "C) Balcony", "D) Bedroom", "E) Kitchen"],
         correctAnswer: 4
+    }, {
+        question: "The computer game is in the .......... .",
+        choices: ["A) Kitchen", "B) Hall", "C) Playroom", "D) Garage", "E) Bedroom"],
+        correctAnswer: 2
     }];
 
     var questionCounter = 0; //Soru sayısını takip etmek için
@@ -62,10 +82,10 @@
             id: 'question'
         });
 
-        var header = $('<h2>Soru ' + (index + 1) + ':</h2>');
+        var header = $('<h2 style="font-size: 45px">Soru ' + (index + 1) + ':</h2>');
         qElement.append(header);
 
-        var question = $('<p>').append(questions[index].question);
+        var question = $('<p style="font-size: 25px">').append(questions[index].question);
         qElement.append(question);
 
         var radioButtons = createRadios(index);

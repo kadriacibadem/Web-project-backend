@@ -28,17 +28,7 @@
             <img src="./Images/logo.jpg" th:src="@{/Images/logo.jpg}" width="30" height="30" class="d-inline-block align-top" alt="" style="border-radius: 50%;">
             &nbsp;  ZKM Eğitim Platformu
         </a>
-        <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
@@ -298,29 +288,29 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <a th:href="@{/ingilizce/peopleilove/{id}(id=${id})}"
-                        ><img src="../static/Images/greeting.jpg" th:src="@{/Images/greeting.jpg}" alt="..." class="dersImg"
+                        ><img src="../static/Images/peopleılove.jpg" th:src="@{/Images/peopleılove.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
-                            <h5>Greeting</h5>
-                            <p>Greeting Konu Anlatımı</p>
+                            <h5>People I Love</h5>
+                            <p>People I Love Konu Anlatımı</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <a th:href="@{/ingilizce/toysandgames/{id}(id=${id})}"
-                        ><img src="../static/Images/family.jpg" th:src="@{/Images/family.jpg}" alt="..." class="dersImg"
+                        ><img src="../static/Images/toysandgames.png" th:src="@{/Images/toysandgames.png}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
-                            <h5>My Family</h5>
-                            <p>My Family Konu Anlatımı</p>
+                            <h5>Toys and Games</h5>
+                            <p>Toys and Games Konu Anlatımı</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <a th:href="@{/ingilizce/myhouse/{id}(id=${id})}"
-                        ><img src="../static/Images/people.jpg" th:src="@{/Images/people.jpg}" alt="..." class="dersImg"
+                        ><img src="../static/Images/myhouse.jpg" th:src="@{/Images/myhouse.jpg}" alt="..." class="dersImg"
                         /></a>
                         <div class="carousel-caption d-none d-md-block konuSlide">
-                            <h5>People</h5>
-                            <p>People Konu Anlatımı</p>
+                            <h5>My House</h5>
+                            <p>My House Konu Anlatımı</p>
                         </div>
                     </div>
                 </div>

@@ -7,7 +7,7 @@
 
 .bg-image{
 
-    background: linear-gradient(90deg, rgb(85, 63, 252) 30%,rgb(252, 63, 132) 80%, rgb(255, 230, 9) 100%);
+    background: linear-gradient(90deg, #19A463 30%,#4285F3 80%, rgb(88, 186, 247) 100%);
 
 }
 .shadow-bg{
@@ -174,3 +174,21 @@ h4{
     color: rgb(4, 236, 159);
 }
 
+.dropdown-menu {
+    background-color: yellow;
+}
+.dropdown-item:hover {
+    background-color: goldenrod;
+}
+.dropdown-header {
+    color: black;
+}
+.nav-item .nav-link:hover {
+    border-bottom: 1px solid yellow;
+}
+.img-fixed{
+    padding: 0px;
+}
+.li-fixed{
+    font-size: 16px;
+}

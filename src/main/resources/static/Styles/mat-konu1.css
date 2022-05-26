@@ -76,6 +76,7 @@ img{
 
 }
 
+
 .img-color{
     color: rgb(255, 0, 0);
 }
@@ -129,4 +130,23 @@ h3{
 
 h4{
     color:rgb(0, 204, 255);
+}
+
+.dropdown-menu {
+    background-color: yellow;
+}
+.dropdown-item:hover {
+    background-color: goldenrod;
+}
+.dropdown-header {
+    color: black;
+}
+.nav-item .nav-link:hover {
+    border-bottom: 1px solid yellow;
+}
+.img-fixed{
+    padding: 0px;
+}
+.li-fixed{
+    font-size: 16px;
 }

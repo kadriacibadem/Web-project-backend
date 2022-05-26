@@ -1,44 +1,43 @@
 (function() {
     var questions = [{
         question: "Bir kırtasiyede her birinde 12 kalem olan 81 kutu kurşun kalem vardır.Tükenmez kalem sayısı ise kurşun kalemlerden 39 daha azdır.Buna göre kırtasiyedeki tükenmez kalem sayısı kaçtır?",
-        choices: [927, 914, 933, 940, 908],
+        choices: ["A) 927", "B) 914", "C) 933", "D) 940", "E) 908"],
         correctAnswer: 2
     }, {
-        question: "175 yolcusu olan bir gemi dört limana uğramış ve her limanda 118 yolcu almıştır.\n" +
-            "Buna göre gemide kaç yolcu olmuştur?",
-        choices: [600, 647, 595, 741, 804],
+        question: "175 yolcusu olan bir gemi dört limana uğramış ve her limanda 118 yolcu almıştır. Buna göre gemide kaç yolcu olmuştur?",
+        choices: ["A) 600", "B) 647", "C) 595", "D) 741", "E) 804"],
         correctAnswer: 1
     }, {
         question: "Süleyman üç günde toplam 995 m koşmuştur.İlk iki günde her gün 385 m koştuğuna göre Süleyman 3. günde kaç metre koşmuştur?",
-        choices: [350, 300, 250, 225, 220],
+        choices: ["A) 350", "B) 300", "C) 250", "D) 225", "E) 220"],
         correctAnswer: 3
     }, {
         question: "Büyük bir pastane yaptığı keklerin her biri için 12 yumurta kullanmaktadır.Bugün bu keklerden 29 kek yapan pastanede 154 yumurta kalmıştır.Buna göre kek yapmaya başlamdan önce pastanede kaç yumurta vardı?",
-        choices: [502, 500, 501, 499, 502],
+        choices: ["A) 502", "B) 500", "C) 501", "D) 499", "E) 502"],
         correctAnswer: 0
     }, {
         question: "Bir lokum dükkanında 955 adet ambalajlanmamış lokum vardı.Bu lokumlardan bir kısmı bir tanesinde 35 tane lokum olan 24 kutuya konulmuştur.Ambalajlanmamış kaç lokum kalmıştır?",
-        choices: [110, 115, 120, 105, 125],
+        choices: ["A) 110", "B) 115", "C) 120", "D) 105", "E) 125"],
         correctAnswer: 1
     }, {
         question: "Bir arabanın bagajında 8 koli vardır.Bunlardan 7 tanesinin her birinin kütlesi 113 kg , 8. kolinin kütlesi ise 185 kg dır.Buna göre bagajdaki kolilerin kütlesi kaç kilogramdır?",
-        choices: [965, 970, 976, 977, 980],
+        choices: ["A) 965", "B) 970", "C) 976", "D) 977", "E) 980"],
         correctAnswer: 2
     }, {
         question: "342 + 133 =? işleminin tahmini sonucu kaçtır?",
-        choices: [500, 480, 450, 460, 470],
+        choices: ["A) 500", "B) 480", "C) 450", "D) 460", "E) 470"],
         correctAnswer: 4
     }, {
         question: "Kare ile dikdörtgensel bölge hangi geometrik şeklin yüzeylerini oluşturur ?",
-        choices: ["Küp", "Kare Prizma", "Daire", "Üçgen", "Dikdörtgen"],
+        choices: ["A) Küp", "B) Kare Prizma", "C) Daire", "D) Üçgen", "E) Dikdörtgen"],
         correctAnswer: 1
     }, {
         question: "234 + 358 =? işleminin tahmini sonucu kaçtır?",
-        choices: [490, 590, 600, 450, 400],
+        choices: ["A) 490", "B) 590", "C) 600", "D) 450", "E) 400"],
         correctAnswer: 1
     }, {
         question: "Dört tarafı birbirine eşit olan geometrik şekil hangisidir ?",
-        choices: ["Silindir", "Kare", "Üçgen", "Daire", "Dikdörtgen"],
+        choices: ["A) Silindir", "B) Kare", "C) Üçgen", "D) Daire", "E) Dikdörtgen"],
         correctAnswer: 1
     }];
 
@@ -83,10 +82,10 @@
             id: 'question'
         });
 
-        var header = $('<h2>Soru ' + (index + 1) + ':</h2>');
+        var header = $('<h2 style="font-size: 45px">Soru ' + (index + 1) + ':</h2>');
         qElement.append(header);
 
-        var question = $('<p>').append(questions[index].question);
+        var question = $('<p style="font-size: 21px">').append(questions[index].question);
         qElement.append(question);
 
         var radioButtons = createRadios(index);

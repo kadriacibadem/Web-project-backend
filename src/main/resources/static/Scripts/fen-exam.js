@@ -1,24 +1,44 @@
 (function() {
     var questions = [{
-        question: "Soru1",
-        choices: [0, 1, 2, 3, 4],
-        correctAnswer: 0
-    }, {
-        question: "Soru2",
-        choices: [0, 1, 2, 3, 4],
-        correctAnswer: 1
-    }, {
-        question: "Soru3",
-        choices: [0, 1, 2, 3, 4],
+        question: "Canlılar için gerekli gazların karışımı dünyanın hangi bölümünde yer alır?",
+        choices: ["A) Su", "B) Kara", "C) Hava", "D) Yer Altı", "E) Tahta"],
         correctAnswer: 2
     }, {
-        question: "Soru4",
-        choices: [0, 1, 2, 3, 4],
+        question: "Dünya' nın yuvarlak olduğunu söyleyen ilk kişi hangisidir ?",
+        choices: ["A) Pisagor", "B) Aristo", "C) Kristof Kolomb", "D) Sokrates", "E) Galileo"],
+        correctAnswer: 0
+    }, {
+        question: "Dünyamızı oluşturan tabakalardan en dışta hangisi yer alır?",
+        choices: ["A) Taş tabakası", "B) Su tabakası", "C) Hava tabakası", "D) Toprak tabakası", "E) Tahta tabakası"],
+        correctAnswer: 2
+    }, {
+        question: "Aşağıdakilerden hangisi esnek bir madde değildir?",
+        choices: ["A) Tel", "B) Sünger", "C) Kalem", "D) Yay", "E) Yastık"],
+        correctAnswer: 2
+    }, {
+        question: "Bisikletin camdan yapılmamasının nedeni aşağıdakilerden hangisidir?",
+        choices: ["A) Saydam olması", "B) Kırılgan olması", "C) Sert olması", "D) Pahalı olması", "E) Ucuz olması"],
+        correctAnswer: 1
+    }, {
+        question: "Aşağıdakilerden hangisi katı madde olduğu halde sıvılar gibi konulduğu kabın şeklini alır?",
+        choices: ["A) Su", "B) Toz şeker", "C) Zeytinyağı", "D) Tereyağı", "E) Kola"],
+        correctAnswer: 1
+    }, {
+        question: "Aşağıdaki maddelerden hangisi gaz haldedir?",
+        choices: ["A) Toprak", "B) Sabun", "C) Zeytinyağı", "D) Su", "E) Su buharı"],
+        correctAnswer: 4
+    }, {
+        question: "Aşağıdakilerden hangisi yapay çevredir?",
+        choices: ["A) Deniz ", "B) Orman ", "C) Göl", "D) Baraj", "E) Nehir"],
         correctAnswer: 3
     }, {
-        question: "Soru5",
-        choices: [0, 1, 2, 3, 4],
-        correctAnswer: 4
+        question: "Aşağıdakilerden hangisi cansız varlıktır?",
+        choices: ["A) Güvercin", "B) Gül", "C) Ayçiçeği", "D) Yıldız", "E) Yarasa"],
+        correctAnswer: 3
+    }, {
+        question: "Pamukkale Travertenleri hangi ilimizdedir?",
+        choices: ["A) Denizli", "B) Antalya", "C) Nevşehir", "D) Samsun", "E) Kars"],
+        correctAnswer: 0
     }];
 
     var questionCounter = 0; //Soru sayısını takip etmek için
@@ -61,10 +81,10 @@
             id: 'question'
         });
 
-        var header = $('<h2>Soru ' + (index + 1) + ':</h2>');
+        var header = $('<h2 style="font-size: 45px">Soru ' + (index + 1) + ':</h2>');
         qElement.append(header);
 
-        var question = $('<p>').append(questions[index].question);
+        var question = $('<p style="font-size: 25px">').append(questions[index].question);
         qElement.append(question);
 
         var radioButtons = createRadios(index);
